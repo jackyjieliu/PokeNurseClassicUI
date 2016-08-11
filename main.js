@@ -169,7 +169,6 @@ ipcMain.on('get-players-pokemons', (event) => {
 
     var pokemons = pogobuf.Utils.splitInventory(inventory)['pokemon']
     var reducedPokemonList = []
-
     for (var i = 0; i < pokemons.length; i++) {
       var pokemon = pokemons[i]
 
@@ -189,7 +188,8 @@ ipcMain.on('get-players-pokemons', (event) => {
         name: pokemonName,
         nickname: pokemon['nickname'] || pokemonName,
         // Multiply by -1 for sorting
-        favorite: pokemon['favorite'] * -1
+        favorite: pokemon['favorite'] * -1,
+        capturedTime: pokemon.creation_time_ms.low * -1
       })
     }
 

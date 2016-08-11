@@ -99,7 +99,7 @@ function sortPokemonList (sorting, refresh) {
     if (poke['deployed']) checkBox += ' disabled'
     if (poke['favorite']) favorite = 'glyphicon glyphicon-star favorite-yellow'
 
-    pokemonList.innerHTML += '<tr><td>' + checkBox + '></td><td><span class="favorite ' + favorite + '"/></td><td>' + poke['pokemon_id'] + '</td><td>' + poke['name'] + '</td><td>' + poke['nickname'] + '</td><td>' + poke['cp'] + '</td><td>' + poke['iv'] + '% (' + poke['attack'] + '/' + poke['defense'] + '/' + poke['stamina'] + ')</td></tr>'
+    pokemonList.innerHTML += '<tr><td>' + checkBox + '></td><td><span class="favorite ' + favorite + '"/></td><td>' + poke['pokemon_id'] + '</td><td>' + poke['name'] + '</td><td>' + poke['nickname'] + '</td><td>' + poke['cp'] + '</td><td>' + poke['iv'] + '% (' + poke['attack'] + '/' + poke['defense'] + '/' + poke['stamina'] + ')</td><td>'+ poke.capturedTime +'</td></tr>'
   })
 }
 

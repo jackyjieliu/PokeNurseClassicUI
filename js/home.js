@@ -44,10 +44,13 @@ transferBtn.addEventListener('click', () => {
 
   if (ipc.sendSync('confirmation-dialog', 'transfer').success) {
     running = true
+    var totalDelay = 0;
     selectedPokemon.forEach((pokemon, index) => {
-      ipc.send('transfer-pokemon', pokemon.value, index * randomDelay(2, 3))
+      var delay = index * randomDelay(3, 6)
+      totalDelay += delay;
+      ipc.send('transfer-pokemon', pokemon.value, delay)
     })
-    countDown('Transfer', selectedPokemon.length * 2.5)
+    countDown('Transfer', totalDelay)
   }
 })
 

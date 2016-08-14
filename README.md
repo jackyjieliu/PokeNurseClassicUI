@@ -1,6 +1,8 @@
 # PokeNurse
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
+
 This is a project forked off https://github.com/duhminick/PokeNurse with the original UI.
+
 ![Main Window](http://i.imgur.com/wsfNrJf.png)
 
 

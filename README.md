@@ -1,7 +1,7 @@
 # PokeNurse
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
 
-This is a project forked off https://github.com/duhminick/PokeNurse with the original UI.
+This is a project forked off [PokeNurse](https://github.com/duhminick/PokeNurse) with the original UI. I created this repo because I prefer the UI over the current UI in PokeNurse.
 
 ![Main Window](http://i.imgur.com/wsfNrJf.png)
 

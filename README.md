@@ -1,36 +1,30 @@
 # PokeNurse
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
 
-This is a project forked off [PokeNurse](https://github.com/duhminick/PokeNurse) with the original UI. I created this repo because I prefer the UI over the current UI in PokeNurse.
-
-![Main Window](http://i.imgur.com/wsfNrJf.png)
-
+This is a project forked off [PokeNurse](https://github.com/duhminick/PokeNurse) with the original UI.
 
 ## Features
 * List Pokemon
     * Pokedex Number
     * Name
+    * Nickname
     * CP
     * IV
+    * Captured Date
+
 * Transfer Pokemon
 * Evolve Pokemon
 
 ## Development
-    git clone https://github.com/duhminick/PokeNurse
+    git clone https://github.com/duhminick/PokeNurse https://github.com/jackyjieliu/PokeNurseClasicUI.git
     cd PokeNurse
     npm install
     npm start
 
 This project follows the [JS Standard Code Style](http://standardjs.com/index.html) for the most part.
 
-## Todo
-* Pictures would be nice
-* Change the table into something more appealing
-
-## Known Issues
-* Sometimes after login, the page will stay white instead of showing the list of Pokemon
-
 ## Contributors
+* duhminick (PokeNurse creator)
 * yungfrancis (First pull!)
 * nrdxn
 

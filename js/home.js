@@ -46,9 +46,9 @@ transferBtn.addEventListener('click', () => {
     running = true
     var totalDelay = 0;
     selectedPokemon.forEach((pokemon, index) => {
-      var delay = index * randomDelay(3, 6)
+      var delay = randomDelay(3, 6)
       totalDelay += delay;
-      ipc.send('transfer-pokemon', pokemon.value, delay)
+      ipc.send('transfer-pokemon', pokemon.value, totalDelay)
     })
     countDown('Transfer', totalDelay)
   }
@@ -61,10 +61,13 @@ evolveBtn.addEventListener('click', () => {
 
   if (ipc.sendSync('confirmation-dialog', 'evolve').success) {
     running = true
+    var totalDelay = 0;
     selectedPokemon.forEach((pokemon, index) => {
-      ipc.send('evolve-pokemon', pokemon.value, index * randomDelay(25, 30))
+      var delay = randomDelay(35, 40);
+      totalDelay += delay;
+      ipc.send('evolve-pokemon', pokemon.value, totalDelay)
     })
-    countDown('Evolve', selectedPokemon.length * 27.5)
+    countDown('Evolve', totalDelay)
   }
 })
 
@@ -98,11 +101,12 @@ function sortPokemonList (sorting, refresh) {
   pokemons.pokemon.forEach(poke => {
     var checkBox = '<input type="checkbox" value="' + poke['id'].toString() + '"'
     var favorite = 'glyphicon glyphicon-star-empty'
+    var capturedDate = new Date( poke.capturedTime * -1000);
 
     if (poke['deployed']) checkBox += ' disabled'
     if (poke['favorite']) favorite = 'glyphicon glyphicon-star favorite-yellow'
 
-    pokemonList.innerHTML += '<tr><td>' + checkBox + '></td><td><span class="favorite ' + favorite + '"/></td><td>' + poke['pokemon_id'] + '</td><td>' + poke['name'] + '</td><td>' + poke['nickname'] + '</td><td>' + poke['cp'] + '</td><td>' + poke['iv'] + '% (' + poke['attack'] + '/' + poke['defense'] + '/' + poke['stamina'] + ')</td><td>'+ poke.capturedTime +'</td></tr>'
+    pokemonList.innerHTML += '<tr><td>' + checkBox + '></td><td><span class="favorite ' + favorite + '"/></td><td>' + poke['pokemon_id'] + '</td><td>' + poke['name'] + '</td><td>' + poke['nickname'] + '</td><td>' + poke['cp'] + '</td><td>' + poke['iv'] + '% (' + poke['attack'] + '/' + poke['defense'] + '/' + poke['stamina'] + ')</td><td>'+ capturedDate.toLocaleDateString() +'</td></tr>'
   })
 }
 

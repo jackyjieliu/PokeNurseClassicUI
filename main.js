@@ -3,6 +3,7 @@ const fs          = require('fs')
 const path        = require('path')
 const pogobuf     = require('pogobuf')
 const POGOProtos  = require('node-pogo-protos')
+const Long = require('long')
 // const sleep = require('sleep')
 
 const accountPath = path.join(app.getPath('appData'), '/pokenurse/account.json')
@@ -174,6 +175,9 @@ ipcMain.on('get-players-pokemons', (event) => {
 
       if (pokemon['cp'] === 0) continue
 
+      var capturedTime = new Long(pokemon.creation_time_ms.low, pokemon.creation_time_ms.high, pokemon.creation_time_ms.unsigned);
+      capturedTime = capturedTime.divide(1000).toString()
+
       var pokemonName = pogobuf.Utils.getEnumKeyByValue(POGOProtos.Enums.PokemonId, pokemon['pokemon_id']);
       reducedPokemonList.push({
         cp: pokemon['cp'],
@@ -189,7 +193,7 @@ ipcMain.on('get-players-pokemons', (event) => {
         nickname: pokemon['nickname'] || pokemonName,
         // Multiply by -1 for sorting
         favorite: pokemon['favorite'] * -1,
-        capturedTime: pokemon.creation_time_ms.low * -1
+        capturedTime: parseInt(capturedTime, 10) * -1
       })
     }
 

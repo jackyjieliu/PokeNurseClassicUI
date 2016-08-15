@@ -3,6 +3,8 @@
 
 This is a project forked off [PokeNurse](https://github.com/duhminick/PokeNurse) with the original grid UI without master/child table.
 
+![Screen](./imgs/screen.png)
+
 ## Features
 * List Pokemon
     * Pokedex Number
@@ -16,7 +18,7 @@ This is a project forked off [PokeNurse](https://github.com/duhminick/PokeNurse)
 * Evolve Pokemon
 
 ## Development
-    git clone https://github.com/duhminick/PokeNurse https://github.com/jackyjieliu/PokeNurseClasicUI.git
+    git clone https://github.com/jackyjieliu/PokeNurseClassicUI
     cd PokeNurse
     npm install
     npm start

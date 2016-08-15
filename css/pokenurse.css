@@ -30,3 +30,7 @@ thead > tr > td {
 .favorite {
   top: 4px;
 }
+
+.favoriteButton {
+  cursor: pointer;
+}

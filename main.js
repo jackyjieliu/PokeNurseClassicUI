@@ -217,4 +217,9 @@ ipcMain.on('evolve-pokemon', (event, id, delay) => {
     console.log('[+] Evolved Pokemon with id: ' + id)
   }, delay)
 })
+
+ipcMain.on('favorite-pokemon', (event, id, isFavorite) => {
+  client.setFavoritePokemon(id, isFavorite)
+  console.log('[+] Pokemon favorite status set to ' + isFavorite)
+})
 // END OF POKEMON

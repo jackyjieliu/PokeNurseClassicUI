@@ -3,6 +3,8 @@
 
 This is a project forked off [PokeNurse](https://github.com/duhminick/PokeNurse) with the original grid UI without master/child table.
 
+![Screen](./imgs/screen.png)
+
 ## Features
 * List Pokemon
     * Pokedex Number
